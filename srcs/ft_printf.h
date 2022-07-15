@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 23:59:44 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/07/15 08:34:19 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/07/15 09:55:18 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define LENGTH_LONG		1
 # define LENGTH_LONGLONG	2
 # define LENGTH_SHORT		3
-# define LENGHT_SHORTSHORT	4
+# define LENGTH_SHORTSHORT	4
 
 typedef unsigned long long t_ull;
 typedef __uint8_t	t_bool;
