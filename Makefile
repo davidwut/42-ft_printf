@@ -7,7 +7,7 @@ HEAD_DIR	:= includes/
 
 MAIN		:= $(SRC_DIR)/main.c
 M_OBJ		:= $(MAIN:%.c=%.o)
-SRC			:= ft_printf.c
+SRC			:= ft_printf.c ft_printf_utils.c
 SRCS		:= $(addprefix $(SRC_DIR),$(SRC))
 OBJS		:= $(SRCS:%.c=%.o)
 HEAD		:= libft.a
@@ -45,7 +45,7 @@ re:			fclean all
 
 run:		all
 			$(CC) -o $(EXE) $(M_OBJ) -L. -l ftprintf
-			@echo "$(PURPLE)Running$(NC)"
+			@echo "$(PURPLE)~~~ Running ~~~$(NC)\n"
 			@./$(EXE)
 
 .PHONY:		all clean fclean re run
