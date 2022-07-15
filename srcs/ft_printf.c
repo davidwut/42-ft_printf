@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 23:59:17 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/07/15 09:29:32 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/07/15 10:02:41 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	_state_length(const char **fmt, t_info *info)
 			info->length = LENGTH_SHORT;
 			fmt[0]++;
 			if (**fmt == 'h')
-				info->length = LENGHT_SHORTSHORT;
+				info->length = LENGTH_SHORTSHORT;
 		}
 		else if (**fmt == 'l')
 		{
@@ -87,7 +87,7 @@ void	_state_length(const char **fmt, t_info *info)
 			if (**fmt == 'l')
 				info->length = LENGTH_LONGLONG;
 		}
-		if (info->length == LENGTH_LONGLONG || info->length == LENGHT_SHORTSHORT)
+		if (info->length == LENGTH_LONGLONG || info->length == LENGTH_SHORTSHORT)
 			fmt[0]++;
 		info->state = STATE_SPEC;
 		fmt[0]--;
