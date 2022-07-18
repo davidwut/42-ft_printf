@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 07:12:35 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/07/15 09:56:06 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/07/17 19:41:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,10 @@ void	ft_printf_unsigned_number(t_ull n, int radix, t_info *info)
 	char	*hex;
 	char	buffer[50];
 	int		i;
+	int		temp;
 
 	int (*f)(int) = ft_tolower;
-	if (info->upper)
+	if (info->flags & FLAGS_UPPER)
 		f = ft_toupper;
 	hex = "0123456789abcdef";
 	i = 0;
@@ -68,6 +69,11 @@ void	ft_printf_unsigned_number(t_ull n, int radix, t_info *info)
 		buffer[i++] = f(hex[n % radix]);
 		n /= radix;
 	}
+	temp = i;
+	if (!(info->flags & FLAGS_LEFT))
+		padder(temp, info);
 	while (i-- > 0)
 		_putc(buffer[i], info);
+	if (info->flags & FLAGS_LEFT)
+		padder(temp, info);
 }
