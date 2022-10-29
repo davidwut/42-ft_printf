@@ -1,0 +1,9 @@
+*
+!*/
+!*.*
+!Makefile
+*.o*
+.DS_STORE
+*dSYM*
+main.c
+*.a
