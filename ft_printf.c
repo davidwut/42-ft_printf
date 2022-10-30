@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:47:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 22:20:01 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/30 23:22:05 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	ft_vfprintf(int fd, const char *fmt, va_list args)
 		}
 		else
 			info.done += write(fd, fmt++, 1);
+		reset_info(&info);
 	}
 	return (info.done);
 }
