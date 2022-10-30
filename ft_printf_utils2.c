@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:40:11 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 23:15:15 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/30 23:30:22 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 void	_putc(t_info *info, char c)
 {
-	info->done += 1;
-	write(info->fd, &c, 1);
+	info->done += write(info->fd, &c, 1);
 }
 
 void	_puts(t_info *info, char *str)
 {
-	int	len;
-
 	if (str == NULL)
 	{
 		_puts(info, "(null)");
 		return ;
 	}
-	len = ft_strlen(str);
-	info->done += len;
-	write(info->fd, str, len);
+	info->done += write(info->fd, str, ft_strlen(str));
 }
 
 void	_putptr(t_info *info, va_list args)
