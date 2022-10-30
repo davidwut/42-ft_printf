@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:33:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 22:25:05 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:52:54 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 typedef unsigned long long	t_ull;
 typedef __uint8_t			t_bool;
 
+/*
 enum	e_bool{
-	false,
-	true
+	false = 0,
+	true = 1
 };
+*/
 
 typedef struct s_info
 {

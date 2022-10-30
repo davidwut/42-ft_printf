@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:40:11 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 22:25:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:53:23 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	_puts(t_info *info, char *str)
 void	_putptr(t_info *info, va_list args)
 {
 	_puts(info, "0x");
-	_putnum(info, args, false, 16);
+	_putnum(info, args, 0, 16);
 }
 
 void	_putbigx(t_info *info, va_list args)
 {
 	info->upper = 1;
-	_putnum(info, args, false, 16);
+	_putnum(info, args, 0, 16);
 }
 
 void	_putnum(t_info *info, va_list args, t_bool sign, int radix)
