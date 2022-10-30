@@ -18,10 +18,11 @@ $(name):	$(OBJS)
 
 clean:
 			@$(RM) $(OBJS)
+			@$(RM) main.o
 
 fclean:		clean
 			@$(RM) $(name)
-			@$(RM) main.o a.out
+			@$(RM) a.out
 
 re:			fclean all
 
