@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:40:11 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 22:53:23 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/30 23:11:10 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,16 @@ void	_puts(t_info *info, char *str)
 
 void	_putptr(t_info *info, va_list args)
 {
-	_puts(info, "0x");
-	_putnum(info, args, 0, 16);
+	void	*ptr;
+
+	ptr = va_arg(args, void *);
+	if (ptr == NULL)
+		_puts(info, "(nil)");
+	else
+	{
+		_puts(info, "0x");
+		_put_unsigned_number(info, (t_ull) ptr, 16);
+	}
 }
 
 void	_putbigx(t_info *info, va_list args)
