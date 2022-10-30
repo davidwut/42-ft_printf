@@ -21,10 +21,12 @@ clean:
 
 fclean:		clean
 			@$(RM) $(name)
+			@$(RM) main.o a.out
 
 re:			fclean all
 
 run:		all
-			$(CC) $$(CFLAGS) -lftprintf main.c
+			$(CC) $$(CFLAGS) main.c $(name)
+			./a.out
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re run
