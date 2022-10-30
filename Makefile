@@ -1,4 +1,4 @@
-name	:= libftprintf.a
+NAME	:= libftprintf.a
 
 SRCS	:= $(filter-out main.c, $(wildcard *.c))
 OBJS	:= $(SRCS:.c=.o)
@@ -8,10 +8,10 @@ CFLAGS	:= -Wall -Wextra -Werror
 AR		:= ar -rcsv
 RM		:= rm -f
 
-all:		$(name)
+all:		$(NAME)
 
-$(name):	$(OBJS)
-			@$(AR) $(name) $(OBJS)
+$(NAME):	$(OBJS)
+			@$(AR) $(NAME) $(OBJS)
 
 %.o:		%.c
 			@$(CC) $(CFLAGS) -c $< -o $@
@@ -21,13 +21,13 @@ clean:
 			@$(RM) main.o
 
 fclean:		clean
-			@$(RM) $(name)
+			@$(RM) $(NAME)
 			@$(RM) a.out
 
 re:			fclean all
 
 run:		all
-			$(CC) $$(CFLAGS) main.c $(name)
+			$(CC) $$(CFLAGS) main.c $(NAME)
 			./a.out
 
 .PHONY:		all clean fclean re run
