@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:40:11 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/10/30 23:30:22 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/10/31 10:09:04 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	_putptr(t_info *info, va_list args)
 
 	ptr = va_arg(args, void *);
 	if (ptr == NULL)
-		_puts(info, "(nil)");
+		_puts(info, "0x0");
 	else
 	{
 		_puts(info, "0x");
